@@ -15,13 +15,13 @@ object GameOfLifeActor {
   var routes: Route = _
 
   def main(args: Array[String]) {
-    implicit val system = ActorSystem("JournalDo")
+    implicit val system = ActorSystem("GameOfLife")
     implicit val materializer = ActorMaterializer()
     // needed for the future flatMap/onComplete in the end
     implicit val executionContext = system.dispatcher
 
 
-    val gatewayProps: Props = Props(new GameOfLifeActor())
+    val gatewayProps: Props = Props[GameOfLifeActor]
     implicit lazy val mainActor = system.actorOf(gatewayProps)
 
     initRoutes()
