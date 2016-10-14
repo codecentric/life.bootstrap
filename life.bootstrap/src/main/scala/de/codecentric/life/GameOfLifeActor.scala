@@ -2,13 +2,14 @@ package de.codecentric.life
 
 import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 import akka.http.scaladsl.Http
+import akka.http.scaladsl.model.HttpResponse
+import akka.http.scaladsl.model.headers._
 import akka.http.scaladsl.server.{Directives, RouteResult, _}
 import akka.pattern.ask
 import akka.stream.{ActorMaterializer, Materializer}
 import akka.util.Timeout
-import de.heikoseeberger.akkahttpcirce.CirceSupport
 
-import scala.concurrent.{ExecutionContext, Future}
+import scala.concurrent.{Await, ExecutionContext, Future}
 import scala.language.postfixOps
 
 object GameOfLifeActor {
@@ -32,7 +33,6 @@ object GameOfLifeActor {
   }
 
   def initRoutes()(implicit gameOfLife: ActorRef, ec: ExecutionContext, mat: Materializer) = {
-    import CirceSupport._
     import Directives._
 
     import scala.concurrent.duration._
@@ -40,7 +40,8 @@ object GameOfLifeActor {
       get {
         implicit val timeout = Timeout(5 seconds)
         val eventualGameOutput: Future[GameOutput] = (gameOfLife ? Tick).mapTo[GameOutput]
-        complete(eventualGameOutput.map(_.output))
+
+        complete(HttpResponse(200).withHeaders(new RawHeader("Refresh", "1")).withEntity(Await.result(eventualGameOutput.map(_.output),.5.seconds)))
       }
     }
 
