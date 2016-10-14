@@ -51,7 +51,7 @@ object GameOfLifeActor {
 
 class GameOfLifeActor extends Actor {
   override def receive: Receive = {
-    case Tick => sender() ! GameOutput("Tick")
+    case Tick => sender() ! GameOutput(GameOfLife.tick())
   }
 }
 
