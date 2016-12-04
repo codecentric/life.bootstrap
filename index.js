@@ -11,5 +11,6 @@ function tick(req, res, next) {
 }
 
 function response(req, res, next) {
+  res.set('Refresh', '1');
   res.type('application/json').status(200).json(req.result).end();
 }
