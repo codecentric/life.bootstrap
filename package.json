@@ -4,7 +4,7 @@
   "description": "Game of Life bootstrap project",
   "main": "index.js",
   "scripts": {
-    "start": "node --use_strict index.js"
+    "start": "node --use_strict index.js",
     "test": "node --use_strict --harmony node_modules/istanbul/lib/cli.js cover _mocha"
   },
   "repository": {
@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/codecentric/life.bootstrap/issues"
   },
-  "homepage": "https://github.com/codecentric/life.bootstrap#readme"
+  "homepage": "https://github.com/codecentric/life.bootstrap#readme",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.6",
+    "supertest": "^2.0.1"
+  }
 }

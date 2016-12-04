@@ -7,7 +7,7 @@ In order to start implementing, all you need to do is use the <code>tick()</code
 You can use fancy HTML, or output basic ASCII text - anything goes. 
 
 ### Testing
-I've included dependencies for Mocha, Istanbul and Sinon.
+I've included dependencies for Supertest, Mocha, Istanbul and Sinon.
 
 ### Running with Docker
 I have included a simple Node 6 Dockerfile that will mount the node app into its app directory.

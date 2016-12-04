@@ -1,7 +1,6 @@
-**/life.war
-**/container_settings_ldev.json
-target
+node_modules
 .idea
 *.iml
 *.iws
 *.ipr
+npm-debug.log
