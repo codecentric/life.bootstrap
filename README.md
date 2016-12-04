@@ -10,4 +10,5 @@ You can use fancy HTML, or output basic ASCII text - anything goes.
 I've included dependencies for Supertest, Mocha, Istanbul and Sinon.
 
 ### Running with Docker
-I have included a simple Node 6 Dockerfile that will mount the node app into its app directory.
+I have included a simple Node 6 Dockerfile that you can mount the node app into. 
+For convenience, there is a run-docker.sh script that you can simply execute, or use as a blueprint for building and running the image.
