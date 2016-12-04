@@ -1,0 +1,7 @@
+**/life.war
+**/container_settings_ldev.json
+target
+.idea
+*.iml
+*.iws
+*.ipr
