@@ -1,0 +1,26 @@
+{
+  "name": "life.bootstrap",
+  "version": "1.0.0",
+  "description": "Game of Life bootstrap project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --use_strict index.js"
+    "test": "node --use_strict --harmony node_modules/istanbul/lib/cli.js cover _mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codecentric/life.bootstrap.git"
+  },
+  "keywords": [
+    "gameoflife",
+    "node",
+    "coderetreat",
+    "bootstrap"
+  ],
+  "author": "Tobias Goeschel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codecentric/life.bootstrap/issues"
+  },
+  "homepage": "https://github.com/codecentric/life.bootstrap#readme"
+}
