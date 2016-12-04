@@ -3,7 +3,7 @@ const GameOfLife = require('./app/GameOfLife');
 const app = express();
 
 app.get('/life', [tick, response]);
-app.listen('6102');
+app.listen('80');
 
 function tick(req, res, next) {
   req.result = GameOfLife.tick();
